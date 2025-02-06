@@ -1,0 +1,466 @@
+@import 'flatpickr/dist/flatpickr.min.css';
+
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to bottom, #f9f9f9, #e0eafc);
+  color: #333;
+  line-height: 1.6;
+  padding: 20px;
+  overflow-x: hidden;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+body.dark-mode .outfitter-card,
+body.dark-mode .feature-card,
+body.dark-mode .form-container {
+  background-color: #1e1e1e;
+}
+
+body.dark-mode button {
+  background: linear-gradient(90deg, #424242, #616161);
+}
+
+body.dark-mode input,
+body.dark-mode textarea,
+body.dark-mode select,
+body.dark-mode .notification {
+  background: #2e2e2e;
+  border-color: #424242;
+  color: #ffffff;
+}
+
+body.dark-mode h1, 
+body.dark-mode h2, 
+body.dark-mode .feature-card h3, 
+body.dark-mode .form-group label,
+body.dark-mode .sort-options label {
+  color: #ffffff;
+}
+
+body.dark-mode .feature-card p,
+body.dark-mode .outfitter-card p {
+  color: #b0b0b0;
+}
+
+body.dark-mode .landing-page {
+  background: linear-gradient(180deg, #121212, #1e1e1e);
+}
+
+body.dark-mode .hero-section {
+  background: linear-gradient(180deg, #424242, #616161);
+}
+
+body.dark-mode #calendar {
+  background: #2e2e2e;
+  border-color: #424242;
+  color: #ffffff;
+}
+
+/* Global Heading Styles */
+h1, h2 {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-size: 3rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  animation: fadeInDown 1s ease-in-out;
+}
+
+h2 {
+  font-size: 2rem;
+  text-transform: capitalize;
+}
+
+/* Buttons */
+button {
+  background: linear-gradient(90deg, #3498db, #1abc9c);
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 10px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+  background: linear-gradient(90deg, #1abc9c, #3498db);
+  box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.2);
+  transform: translateY(-3px);
+}
+
+/* Input Fields and Textarea */
+input, textarea {
+  display: block;
+  margin: 15px auto;
+  padding: 12px 15px;
+  width: 90%;
+  max-width: 400px;
+  border: 2px solid #dcdcdc;
+  border-radius: 25px;
+  font-size: 1rem;
+  background: #f4f4f4;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus, textarea:focus {
+  border-color: #3498db;
+  box-shadow: 0 0 10px rgba(52, 152, 219, 0.5);
+  outline: none;
+}
+
+/* Landing Page */
+.landing-page {
+  text-align: center;
+  background: linear-gradient(180deg, #e0eafc, #f9f9f9);
+  color: #333;
+  padding: 60px 20px;
+  min-height: 100vh;
+}
+
+/* Hero Section */
+.hero-section {
+  background: linear-gradient(180deg, #3498db, #1abc9c);
+  color: #fff;
+  padding: 60px 20px;
+  text-align: center;
+  margin-bottom: 40px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.hero-section h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  animation: fadeInDown 1s ease-in-out;
+}
+
+.hero-section p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.hero-section input {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 25px;
+  width: 100%;
+  max-width: 400px;
+  font-size: 1rem;
+  outline: none;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.hero-section input:focus {
+  box-shadow: 0 0 10px rgba(52, 152, 219, 0.7);
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* About Section */
+.about-section {
+  margin: 40px 20px;
+}
+
+/* Features Section */
+.features-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.feature-card {
+  background: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: left;
+}
+
+.feature-card h3 {
+  font-size: 1.5rem;
+  color: #34495e;
+  margin-bottom: 10px;
+}
+
+.feature-card p {
+  font-size: 1rem;
+  color: #7f8c8d;
+}
+
+/* Outfitter List */
+.outfitter-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+/* Outfitter Card */
+.outfitter-card {
+  background: #ffffff;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.outfitter-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(52, 152, 219, 0.2), transparent);
+  transition: transform 0.5s ease;
+  z-index: -1;
+}
+
+.outfitter-card:hover::before {
+  transform: translateX(50%) translateY(50%);
+}
+
+.outfitter-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.outfitter-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #34495e;
+}
+
+.outfitter-card p {
+  font-size: 0.9rem;
+  color: #7f8c8d;
+  margin: 5px 0;
+}
+
+/* Form Container */
+.form-container {
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #dcdcdc;
+  border-radius: 25px;
+  font-size: 1rem;
+  background: #f4f4f4;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #3498db;
+  box-shadow: 0 0 10px rgba(52, 152, 219, 0.7);
+  outline: none;
+}
+
+button[type="submit"] {
+  background: linear-gradient(90deg, #3498db, #1abc9c);
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background: linear-gradient(90deg, #1abc9c, #3498db);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Landing Footer */
+.landing-footer {
+  background: #2c3e50;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+.landing-footer p {
+  margin-bottom: 10px;
+}
+
+.social-icons a {
+  color: #fff;
+  margin: 0 10px;
+  font-size: 1.5rem;
+}
+
+.social-icons a:hover {
+  color: #1abc9c;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Sort Options */
+.sort-options {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.sort-options select {
+  width: 100%;
+  max-width: 200px;
+  padding: 12px 15px;
+  border-radius: 25px;
+  border: 1px solid #dcdcdc;
+  font-size: 1rem;
+  outline: none;
+  transition: box-shadow 0.3s ease-in-out, border-color 0.3s ease-in-out;
+}
+
+.sort-options select:focus {
+  box-shadow: 0 0 10px rgba(52, 152, 219, 0.6);
+  border-color: #3498db;
+}
+
+.sort-options label {
+  font-size: 1rem;
+  color: #2c3e50;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+/* Calendar Container */
+.calendar-container {
+  margin-top: 20px;
+  font-family: Arial, sans-serif;
+}
+
+#calendar {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+/* Flatpickr Styles */
+.flatpickr-calendar {
+  width: 100%;
+  z-index: 1000;
+}
+
+.flatpickr-input {
+  width: 100%;
+}
+
+.flatpickr-input:focus {
+  border-color: #007bff;
+}
+
+.flatpickr-calendar-days {
+  font-size: 14px;
+}
+
+.flatpickr-calendar .flatpickr-weekdays {
+  font-weight: bold;
+}
+
+.flatpickr-calendar .flatpickr-next-month, 
+.flatpickr-calendar .flatpickr-prev-month {
+  font-size: 16px;
+}
+
+.flatpickr-calendar .flatpickr-day {
+  text-align: center;
+}
+
+.flatpickr-calendar .flatpickr-day.today {
+  background-color: #007bff;
+  color: white;
+  border-radius: 50%;
+}
+
+.flatpickr-calendar .flatpickr-day.selected {
+  background-color: #007bff;
+  color: white;
+  border-radius: 50%;
+}
+
+.flatpickr-calendar {
+  z-index: 9999;
+}
